@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tiktok_clone/theme/custom_fonts.dart';
 
 class Pallete {
   static const Color mainFontColor = Colors.black;

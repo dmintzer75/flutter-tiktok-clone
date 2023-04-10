@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 import 'package:tiktok_clone/theme/custom_fonts.dart';
@@ -75,6 +73,7 @@ class SignupScreen extends StatelessWidget {
                 width: double.infinity,
                 margin: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextInputField(
+                  keyboardType: TextInputType.emailAddress,
                   labelText: 'Email',
                   controller: _emailController,
                   icon: Icons.email,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tiktok_clone/shared/constants.dart';
 import 'package:tiktok_clone/theme/custom_fonts.dart';
 import 'package:tiktok_clone/theme/custom_theme.dart';
 import 'package:tiktok_clone/theme/styles.dart';
@@ -17,8 +18,7 @@ class LoginScreen extends StatelessWidget {
           children: [
             Text(
               "TikTok Clone",
-              style:
-                  CustomFonts.kHeadlineSmall.copyWith(color: Pallete.mainColor),
+              style: CustomFonts.kHeadlineSmall.copyWith(color: Pallete.mainColor),
             ),
             const SizedBox(height: 10),
             Text(
@@ -30,6 +30,7 @@ class LoginScreen extends StatelessWidget {
               width: double.infinity,
               margin: const EdgeInsets.symmetric(horizontal: 20),
               child: TextInputField(
+                keyboardType: TextInputType.emailAddress,
                 labelText: 'Email',
                 controller: _emailController,
                 icon: Icons.email,
@@ -47,7 +48,28 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 25),
-            const LoginButton(),
+            Container(
+              width: double.infinity,
+              height: 50,
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              alignment: Alignment.center,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Styles.buttonRadius),
+                color: Pallete.mainColor,
+                boxShadow: [BoxShadow(color: Pallete.borderColor, offset: Offset(0, 2), blurRadius: 10)],
+              ),
+              child: InkWell(
+                onTap: () {
+                  authController.loginUser(_emailController.text, _passwordController.text);
+                },
+                child: Text(
+                  'Login',
+                  style: CustomFonts.kTitleLarge.copyWith(
+                    color: Pallete.backgroundColor,
+                  ),
+                ),
+              ),
+            ),
             const SizedBox(height: 20),
             const RegisterInstead()
           ],
@@ -81,41 +103,6 @@ class RegisterInstead extends StatelessWidget {
           ),
         )
       ],
-    );
-  }
-}
-
-class LoginButton extends StatelessWidget {
-  const LoginButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 50,
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      alignment: Alignment.center,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Styles.buttonRadius),
-        color: Pallete.mainColor,
-        boxShadow: [
-          BoxShadow(
-              color: Pallete.borderColor, offset: Offset(0, 2), blurRadius: 10)
-        ],
-      ),
-      child: InkWell(
-        onTap: () {
-          print('Login user');
-        },
-        child: Text(
-          'Login',
-          style: CustomFonts.kTitleLarge.copyWith(
-            color: Pallete.backgroundColor,
-          ),
-        ),
-      ),
     );
   }
 }

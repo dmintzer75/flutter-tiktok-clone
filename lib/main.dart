@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 import 'package:tiktok_clone/controllers/auth_controller.dart';
 import 'package:tiktok_clone/theme/custom_theme.dart';
-import 'package:tiktok_clone/views/screens/auth/signup_screen.dart';
+import 'package:tiktok_clone/views/screens/auth/login_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'TikTok Clone',
       theme: CustomTheme.lightTheme,
-      home: SignupScreen(),
+      home: LoginScreen(),
     );
   }
 }
