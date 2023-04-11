@@ -24,3 +24,5 @@ samples, guidance on mobile development, and a full API reference.
 - Firebase Firestore to save data
 
 - Firebase storage to save images
+
+- Video Player extension to play videos

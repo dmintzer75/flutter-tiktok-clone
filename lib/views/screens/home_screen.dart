@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
 import 'package:tiktok_clone/shared/constants.dart';
 
 import 'package:tiktok_clone/theme/custom_theme.dart';
-import 'package:tiktok_clone/views/screens/auth/login_screen.dart';
+
 import '../widgets/custom_icon.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,15 +19,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('sd'),
-        leading: IconButton.outlined(
-          onPressed: () {
-            Get.to(LoginScreen());
-          },
-          icon: Icon(Icons.arrow_back),
-        ),
-      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: pageIndex,
         onTap: (index) {
