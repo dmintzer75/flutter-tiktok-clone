@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tiktok_clone/controllers/video_controller.dart';
+import 'package:tiktok_clone/shared/constants.dart';
 
 import 'package:tiktok_clone/theme/custom_fonts.dart';
 import 'package:tiktok_clone/theme/custom_theme.dart';
+import 'package:tiktok_clone/views/screens/comment_screen.dart';
 import 'package:tiktok_clone/views/widgets/circle_animation.dart';
 
 import '../../models/video.dart';
@@ -34,6 +36,7 @@ class VideoScreen extends StatelessWidget {
                     ),
                     VideoSideBar(
                       data: data,
+                      videoController: videoController,
                     ),
                   ],
                 )
@@ -50,8 +53,10 @@ class VideoSideBar extends StatelessWidget {
   const VideoSideBar({
     super.key,
     required this.data,
+    required this.videoController,
   });
   final Video data;
+  final VideoController videoController;
   buildProfile(String profilePhoto) {
     return Stack(
       children: [
@@ -124,13 +129,11 @@ class VideoSideBar extends StatelessWidget {
                 Column(
                   children: [
                     IconButton(
-                      onPressed: () {
-                        print('favorite pressed');
-                      },
-                      icon: const Icon(
+                      onPressed: () => videoController.likevideo(data.id),
+                      icon: Icon(
                         Icons.favorite,
                         size: 40,
-                        color: Colors.red,
+                        color: data.likes.contains(authController.user.uid) ? Colors.red : Colors.grey,
                       ),
                     ),
                     Text(
@@ -143,7 +146,7 @@ class VideoSideBar extends StatelessWidget {
                   children: [
                     IconButton(
                       onPressed: () {
-                        print('comment pressed');
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => CommentScreen(id: data.id)));
                       },
                       icon: const Icon(
                         Icons.comment,

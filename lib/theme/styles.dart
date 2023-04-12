@@ -39,33 +39,24 @@ class Styles {
       filled: true,
       fillColor: backgroundColor,
       hintText: hintText,
-      hintStyle:
-          CustomFonts.kBodyLarge.copyWith(color: Colors.black.withOpacity(.65)),
+      hintStyle: CustomFonts.kBodyLarge.copyWith(color: Colors.black.withOpacity(.65)),
       labelText: labelText,
-      labelStyle:
-          CustomFonts.kBodyLarge.copyWith(color: Colors.black.withOpacity(.65)),
-      contentPadding:
-          const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
+      labelStyle: CustomFonts.kBodyLarge.copyWith(color: Colors.black.withOpacity(.65)),
+      contentPadding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
       border: OutlineInputBorder(
-        borderSide: BorderSide(
-            color: withBorder ? secondaryColor : Colors.transparent,
-            width: 1.0),
+        borderSide: BorderSide(color: withBorder ? secondaryColor : Colors.transparent, width: 1.0),
         borderRadius: const BorderRadius.all(textFieldRadius),
       ),
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-            color: withBorder ? primaryColor : Colors.transparent, width: 1.0),
+        borderSide: BorderSide(color: withBorder ? primaryColor : Colors.transparent, width: 1.0),
         borderRadius: const BorderRadius.all(textFieldRadius),
       ),
       errorBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-            color: withBorder ? Colors.red : Colors.transparent, width: 1.0),
+        borderSide: BorderSide(color: withBorder ? Colors.red : Colors.transparent, width: 1.0),
         borderRadius: const BorderRadius.all(textFieldRadius),
       ),
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-            color: withBorder ? secondaryColor : Colors.transparent,
-            width: 1.0),
+        borderSide: BorderSide(color: withBorder ? secondaryColor : Colors.transparent, width: 1.0),
         borderRadius: const BorderRadius.all(textFieldRadius),
       ),
     );

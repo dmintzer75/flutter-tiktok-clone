@@ -74,29 +74,34 @@ class CustomFonts {
     fontSize: 14,
     fontWeight: FontWeight.normal,
     letterSpacing: 0.25,
+    color: Pallete.mainFontColor,
   );
 
   static TextStyle kBodySmall = GoogleFonts.montserrat(
     fontSize: 12,
     fontWeight: FontWeight.normal,
     letterSpacing: 0.4,
+    color: Pallete.mainFontColor,
   );
 
   static TextStyle kLabelLarge = GoogleFonts.montserrat(
     fontSize: 14,
     fontWeight: FontWeight.w500,
     letterSpacing: 0.1,
+    color: Pallete.mainFontColor,
   );
 
   static TextStyle kLabelMedium = GoogleFonts.montserrat(
     fontSize: 12,
     fontWeight: FontWeight.w500,
     letterSpacing: 0.5,
+    color: Pallete.mainFontColor,
   );
 
   static TextStyle kLabelSmall = GoogleFonts.montserrat(
     fontSize: 11,
     fontWeight: FontWeight.w500,
     letterSpacing: 0.5,
+    color: Pallete.mainFontColor,
   );
 }
